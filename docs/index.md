@@ -114,6 +114,8 @@ zero real risk.
 
 **Two checks the model itself can't run, done with outside information:**
 
+![Diurnal temperature swing, present vs. +2.5°C future](img/diurnal_swing.png)
+
 - *Day vs. night.* Every dangerous-heat hour, in both scenarios, falls inside 06:00–18:00
   — zero occur at night, even after the uniform +2.5 °C warming. Checking the hourly
   forcing directly (future scenario): the daytime peak reaches ~35.5 °C around 13:00, but
