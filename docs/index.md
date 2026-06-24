@@ -120,8 +120,6 @@ zero real risk.
   the overnight trough sits in a stable **28.4–29.7 °C band from ~19:00 to ~06:00** —
   consistently 6–7 °C below the threshold, every night in the record.
 
-  ![Diurnal temperature swing, present vs. +2.5°C future](img/diurnal_swing.png)
-
   That ~6–7 °C peak-to-trough swing is small for a tropical climate, and it's small for a
   specific physical reason: humidity. At 81% mean RH, the air carries a lot of water
   vapour, which is a strong absorber and re-emitter of longwave radiation. During the
