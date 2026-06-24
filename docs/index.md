@@ -116,13 +116,32 @@ zero real risk.
 
 - *Day vs. night.* Every dangerous-heat hour, in both scenarios, falls inside 06:00–18:00
   — zero occur at night, even after the uniform +2.5 °C warming. Checking the hourly
-  forcing directly: temperatures hold in a stable ~28–30 °C band overnight, several
-  degrees below the threshold, because the diurnal swing in this humid coastal climate is
-  small (~6–7 °C peak-to-trough) — a signature of high humidity damping both daytime
-  highs and nighttime radiative cooling. This isn't a latitude/night-length effect; it's
-  the diurnal amplitude. Practically, it means the city retains full overnight cooling
-  relief in both scenarios, and it validates using *daytime* population for exposure,
-  since that's who's present when the hazard actually occurs.
+  forcing directly (future scenario): the daytime peak reaches ~35.5 °C around 13:00, but
+  the overnight trough sits in a stable **28.4–29.7 °C band from ~19:00 to ~06:00** —
+  consistently 6–7 °C below the threshold, every night in the record.
+
+  ![Diurnal temperature swing, present vs. +2.5°C future](img/diurnal_swing.png)
+
+  That ~6–7 °C peak-to-trough swing is small for a tropical climate, and it's small for a
+  specific physical reason: humidity. At 81% mean RH, the air carries a lot of water
+  vapour, which is a strong absorber and re-emitter of longwave radiation. During the
+  day, that same humidity (plus the cloud cover that tends to accompany it) reflects and
+  scatters some incoming solar radiation, capping how hot the surface gets. At night, the
+  effect runs the other way and works against cooling: water vapour absorbs the
+  longwave radiation the ground is trying to radiate away to space and re-emits a
+  fraction of it back down, which slows the rate of nighttime radiative cooling
+  considerably compared to a dry climate. A desert location can lose 15–20 °C overnight
+  because dry air barely impedes that radiative loss; this humid coastal setting loses
+  only ~6–7 °C for the same reason in reverse — both the daytime ceiling and the
+  nighttime floor get compressed toward the middle by the same humidity.
+
+  It is **not** a latitude or night-length effect — at 6.93°N the night is a stable ~12
+  hours year-round (no seasonal compression the way higher latitudes get in summer), but
+  that duration isn't what's doing the work here; the limiting factor is the rate of
+  cooling per hour, not how many hours are available to cool. The practical upshot: the
+  city retains full overnight cooling relief in both scenarios despite the narrow margin,
+  and it validates using *daytime* population for exposure, since that's who's present
+  when the hazard actually occurs.
 - *Ventilation.* The forcing has no wind direction (`wdir` is entirely missing), and this
   SUEWS configuration is direction-blind by design (`λf` is an isotropic average) — it
   cannot represent street-canyon channelling or how building layout interacts with the
