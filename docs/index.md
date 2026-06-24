@@ -78,6 +78,61 @@ Two findings stand out:
    priority (who needs protecting first) is robust to this warming scenario, even
    though the absolute hazard everyone faces is far higher.
 
+## What's actually driving this
+
+Three separate mechanisms stack to produce the ranking above, and they don't all point
+the same way:
+
+- **Hazard ← morphology, not vegetation.** *Refuge* neighbourhoods have the lowest
+  building footprint and roughness in the dataset (plan-area fraction `λp` 0.047–0.073,
+  frontal area index `λf` 0.02–0.07) — low roughness means weak turbulent mixing, so
+  near-surface air stays warmer under NARP, *despite* refuge having the most vegetation
+  and water cover of any neighbourhood type (≈26% combined vs. ≈7% for hotspots). Surface
+  greenery does not translate into lower hazard at this grid-average scale.
+- **Exposure ← population density**, not building density. Across the ten
+  neighbourhoods, population density correlates strongly with the final risk score
+  (r ≈ 0.73 — though this is partly definitional, since population *is* the exposure
+  pillar). Building footprint density does **not** (r ≈ 0.12) — denser-built
+  neighbourhoods aren't meaningfully riskier here. The two kinds of "density" are easy to
+  conflate and behave completely differently in this model.
+- **Vulnerability ← adaptive capacity, not just exposure.** Holding population density
+  roughly constant (hotspot ≈300/ha vs. core ≈250/ha) isolates the effect: hotspot
+  neighbourhoods have ~10x worse scores on AC access (0.06–0.10 vs. 0.70–0.78), outdoor
+  work (60–65% vs. 18–22%), and deprivation (0.80–0.85 vs. 0.25–0.30). That gap — not
+  hazard, not even exposure — is what actually separates hotspot (rank 1–4) from core
+  (rank 5–6). Deprivation alone correlates at r ≈ 0.87 with risk, but treat that as the
+  formula working as designed (deprivation is a direct input to vulnerability), not an
+  independent discovery.
+
+**A scaling artifact worth naming explicitly.** The bridge min–max scales each pillar
+*across these ten neighbourhoods only*, then takes a geometric mean. Whichever
+neighbourhood is the dataset's minimum on any single pillar gets scaled to exactly 0,
+which zeroes the whole risk index regardless of the other two pillars. That is
+mechanically why *refuge* (population minimum) and Zheng He Towers (hazard minimum) both
+land at risk = 0 — it reflects the scaling method, not a claim that those residents face
+zero real risk.
+
+**Two checks the model itself can't run, done with outside information:**
+
+- *Day vs. night.* Every dangerous-heat hour, in both scenarios, falls inside 06:00–18:00
+  — zero occur at night, even after the uniform +2.5 °C warming. Checking the hourly
+  forcing directly: temperatures hold in a stable ~28–30 °C band overnight, several
+  degrees below the threshold, because the diurnal swing in this humid coastal climate is
+  small (~6–7 °C peak-to-trough) — a signature of high humidity damping both daytime
+  highs and nighttime radiative cooling. This isn't a latitude/night-length effect; it's
+  the diurnal amplitude. Practically, it means the city retains full overnight cooling
+  relief in both scenarios, and it validates using *daytime* population for exposure,
+  since that's who's present when the hazard actually occurs.
+- *Ventilation.* The forcing has no wind direction (`wdir` is entirely missing), and this
+  SUEWS configuration is direction-blind by design (`λf` is an isotropic average) — it
+  cannot represent street-canyon channelling or how building layout interacts with the
+  real-world SW-monsoon-driven prevailing wind a Colombo-like coastal setting would have.
+  Applying general urban-canopy ventilation criteria to our own `λf` values as an
+  independent check: Mlima Moto (`λf`=0.90) and Fuzhou Lanes (`λf`=0.59) fall into a
+  "skimming flow" regime associated with poor street-level ventilation — both already
+  rank among the highest-risk neighbourhoods, so this is corroborating evidence from
+  outside the model, not a SUEWS result.
+
 ## Where this bridge holds, and where it breaks
 
 - **SUEWS gives an environmental hazard, not a health outcome.** `T2` over 35 °C is a
@@ -100,6 +155,40 @@ Two findings stand out:
   no exposed population) pulls risk to zero even under extreme hazard. An arithmetic
   mean would let one high pillar dominate instead — equally defensible, but not what
   we used here.
+- **The "hotspot" label doesn't match its implied building form.** Classifying each
+  neighbourhood's Local Climate Zone (Stewart & Oke, 2012) from `λp` and mean building
+  height, the four `hotspot` neighbourhoods — described as "dense informal
+  settlements" — have footprints of only 0.14–0.35, well below the 0.6–0.9 that LCZ 7
+  (lightweight low-rise, the standard informal-settlement signature) would require.
+  Their nearest LCZ is actually 9 (sparsely built) or the LCZ 6/8 boundary. The heat/risk
+  signal we found for these neighbourhoods comes from who lives there (exposure,
+  vulnerability), not from informal-settlement-style building density — worth being
+  precise about so the result isn't misread as a building-morphology finding.
+- **No wind direction, and a direction-blind model** (see above) — real ventilation
+  differences between neighbourhoods of identical bulk roughness are invisible here.
+
+## How this could inform risk reduction
+
+Mapped to the three pillars that actually drive the ranking, rather than generic heat
+advice:
+
+- **Vulnerability is the highest-leverage target.** The ~10x gap between hotspot and
+  core on AC access, outdoor-work exposure, and deprivation — not hazard — is what
+  separates their risk ranks. Cooling-centre access, shifting outdoor work away from the
+  11:00–15:00 peak (when the dataset's own diurnal data shows danger concentrated), and
+  deprivation-focused support target the mechanism we actually found, not just the
+  hottest map pixel.
+- **Pedestrian-level shade, even though the grid-average hazard didn't show a vegetation
+  effect.** SUEWS's neighbourhood-average T2 found refuge's extra vegetation didn't lower
+  its hazard — but that's an average over the whole grid cell. Street-level shade and
+  high-albedo surfaces in the *hotspot* neighbourhoods would cool conditions where people
+  actually stand, at a resolution this model doesn't resolve.
+- **Street-layout / ventilation corridor design** in Mlima Moto and Fuzhou Lanes
+  specifically, given their poor-ventilation flagging above — informed by real wind
+  climatology (SW monsoon, May–September) that this dataset doesn't include.
+- **Not population reduction.** Exposure tracks where people already live; the
+  intervention there is siting cooling infrastructure to match existing density, not
+  treating density itself as the problem.
 
 ## Citing SUEWS
 
