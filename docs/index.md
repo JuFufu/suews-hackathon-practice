@@ -60,6 +60,8 @@ workers, and a deprivation index.
 | Serendib Rise | refuge | 26 | 205 | 7 (tied last) |
 | Zheng He Towers | core | 2 | 77 | 7 (tied last) |
 
+![Heat hazard vs. heat risk per neighbourhood — hottest is not highest-risk](img/hazard_vs_risk.png)
+
 Two findings stand out:
 
 1. **The hottest neighbourhoods are not the highest-risk ones.** The *refuge*
