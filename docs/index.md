@@ -6,6 +6,11 @@ which is public ahead of/at kickoff. This is a rehearsal of the pipeline and the
 analysis approach, not a hackathon submission — the judged entry is a separate
 repository created under the `UMEP-dev` organisation on the day.
 
+> **In one line:** the hottest neighbourhoods in this city are not the highest-risk
+> ones — low-income, densely populated districts rank highest on heat risk despite
+> being *cooler* than the leafy periphery, because risk here is driven by who can't
+> escape the heat, not by how hot it gets. See the chart below.
+
 ## Pipeline smoke test
 
 Before the real analysis, a minimal SUEWS run via [supy](https://supy.readthedocs.io/)
