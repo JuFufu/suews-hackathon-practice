@@ -70,6 +70,23 @@ the same way:
   formula working as designed (deprivation is a direct input to vulnerability), not an
   independent discovery.
 
+**Within vulnerability, age cuts two different ways.** Elderly fraction is highest in
+*core* (0.13–0.15) — exactly where AC access is also highest and outdoor work/deprivation
+are lowest, so elderly vulnerability there is largely buffered by wealth. Young-child
+fraction is highest in *hotspot* (0.12–0.14) — exactly where AC access is lowest and
+outdoor work/deprivation are highest, so child vulnerability there is compounded, not
+buffered. It's young children, not elderly, who sit at the true centre of overlapping
+risk factors in this dataset:
+
+![Compounding heat vulnerability Venn diagram — young children, outdoor work, no AC, and deprivation overlap in hotspot neighbourhoods, while elderly vulnerability in core neighbourhoods is buffered by wealth](img/vulnerability_venn.png)
+
+This also points to a real physiological gap in the hazard metric itself: a single
+35 °C dry-bulb threshold, applied uniformly, doesn't reflect that elderly residents,
+young children, and outdoor workers under physical exertion all have lower effective
+danger thresholds than a healthy resting adult — so the *hazard* layer likely
+understates danger duration for exactly the people the *vulnerability* layer flags as
+least able to cope.
+
 **A scaling artifact worth naming explicitly.** The bridge min–max scales each pillar
 *across these ten neighbourhoods only*, then takes a geometric mean. Whichever
 neighbourhood is the dataset's minimum on any single pillar gets scaled to exactly 0,
