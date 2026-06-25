@@ -6,6 +6,19 @@ title: Risk Reduction
 
 ---
 
+## How this fits the city's geography
+
+The flat terrain (identical 7 m altitude across all 10 neighbourhoods, no slope or
+elevation effect) and the single shared coastal forcing mean every hazard difference we
+found is a **built-form problem, not a siting problem** — no neighbourhood was placed
+somewhere intrinsically hotter by geography. What the geography *does* contribute: a
+real, exploitable SW-monsoon coastal breeze (May–Sept) that this dataset can't represent
+and this model's isotropic roughness parameter couldn't use even if it could, and a
+humid-tropical diurnal cycle compressed enough that both "no nighttime danger" and "1 °C
+matters disproportionately" (see [Results & Drivers](results.html)) stem from the same
+radiative mechanism. So geography sets a uniform climate envelope; everything that
+differentiates risk *between* neighbourhoods sits on top of it.
+
 ## How this could inform risk reduction
 
 Mapped to the three pillars that actually drive the ranking (see
@@ -19,9 +32,21 @@ Mapped to the three pillars that actually drive the ranking (see
   hottest map pixel.
 - **Pedestrian-level shade, even though the grid-average hazard didn't show a vegetation
   effect.** SUEWS's neighbourhood-average T2 found refuge's extra vegetation didn't lower
-  its hazard — but that's an average over the whole grid cell. Street-level shade and
-  high-albedo surfaces in the *hotspot* neighbourhoods would cool conditions where people
-  actually stand, at a resolution this model doesn't resolve.
+  its hazard — but that's an average over the whole grid cell. Street-level shade (trees,
+  canopies, overhangs) in the *hotspot* neighbourhoods would cool conditions where people
+  actually stand, at a resolution this model doesn't resolve, because shade blocks
+  incoming radiation rather than redirecting it.
+- **High-albedo surfaces need to be placed carefully — they redirect heat, not remove
+  it.** Reflective material on roofs is a clean win: reflected shortwave has a clear path
+  up to the sky. At street level in a narrow, dense canyon — Mlima Moto's profile
+  (λf=0.90) specifically, already flagged as poor-ventilation "skimming flow" with a low
+  sky-view factor — reflective pavement has nowhere to send that energy but sideways and
+  up into building façades and pedestrians at head height. This is a documented failure
+  mode of "cool pavement" schemes: lower surface/air temperature, but *higher* pedestrian
+  radiant heat exposure, because the canyon traps the reflection instead of releasing it.
+  So: cool roofs everywhere; reflective ground surfaces only in open, high-sky-view areas
+  (wide streets, plazas, the *refuge*-type low-density morphology) where reflected energy
+  can actually escape — not in the dense hotspot canyons, where shade is the safer lever.
 - **Street-layout / ventilation corridor design** in Mlima Moto and Fuzhou Lanes
   specifically, given their poor-ventilation flagging in [Results & Drivers](results.html) —
   informed by real wind climatology (SW monsoon, May–September) that this dataset
